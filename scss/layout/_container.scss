@@ -1,0 +1,37 @@
+
+.app-container {
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: $light-grey;
+}
+
+.active-list,
+.completed-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    width: 40rem;
+    max-width: 94%;
+    margin: auto;
+    padding: 2rem 0;
+}
+
+.completed-list {
+    opacity: .3;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.clear-filter {
+    margin-left: .5rem;
+    color: $dark-grey;
+    font-size: 1.2rem;
+    cursor: pointer;
+
+    &:hover {
+        color: $primary-color;
+    }
+}

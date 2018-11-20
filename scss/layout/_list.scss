@@ -1,0 +1,63 @@
+.task-list {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+
+    &__item {
+        display: flex;
+        width: 100%;
+        margin-bottom: .5rem;
+        padding: 1.4rem 2rem;
+        font-size: 1.3rem;
+        align-items: center;
+        background-color: $white;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.2);
+
+        & + & {
+            border-top: .1rem solid #eee;
+        }
+    }
+
+    &__label {
+        margin-left: 1.4rem;
+    }
+
+    .fas {
+        font-size: 1.4rem;
+        color: $grey;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .fa-trash-alt {
+        margin-left: auto;
+
+        &:hover {
+            color: $trash;
+        }
+    }
+
+    .fa-check {
+
+        &:hover {
+            color: $complete
+        }
+    }
+
+    &--completed {
+        padding-left: 0;
+        padding-right: 0;
+        background-color: transparent;
+        box-shadow: none;
+
+        .fas {
+            font-size: 1.4rem;
+            color: $dark-grey;
+        }
+    }
+}
