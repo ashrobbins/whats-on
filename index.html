@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>What's on?</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#e5127d">
+    </head>
+    <body>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js'></script>
+        <script src='https://www.gstatic.com/firebasejs/4.4.0/firebase.js'></script>
+
+        <link rel="stylesheet" type="text/css" href="dist/css/main.css" />
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+        <div id='app' class='app-container'>
+            <header class='app-header'>
+                <input type='text' v-on:keyup.enter='addTask' v-model='newTaskLabel' class='input-text new-task' placeholder='Add a task...' />
+            </header>
+            
+            
+            <section class='active-list'>
+                <h2 class='c-heading--section c-heading--filter' v-if='activeFilter'>{{ activeFilter }} <i class='fas fa-times clear-filter' @click='clearFilter'></i></h2>
+                <ul class='task-list'>
+                    <li v-for='( task, index ) in tasks' class='task-list__item' v-if='!task.complete && !task.trash'>
+                        <i class='fas fa-check' @click='completeTask( index, true )'></i>
+                        <span class='task-list__label' v-html='formattedLabel( task )' @click='filterList( task.tag )'></span>
+                        <i class='fas fa-trash-alt' @click='deleteTask( index )'></i>
+                    </li>
+                </ul>
+            </section>
+
+            <section class='completed-list'>
+                <h2 class='c-heading--section'>Completed tasks</h2>
+                <ul class='task-list task-list--completed'>
+                    <li v-for='( task, index ) in tasks' class='task-list__item' v-if='task.complete && !task.trash'>
+                        <i class='fas fa-redo' @click='completeTask( index, false )'></i>
+                        <span class='task-list__label' v-html='formattedLabel( task )' @click='filterList( task.tag )'></span>
+                        <i class='fas fa-trash-alt' @click='deleteTask( index )'></i>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+
+        <script src='dist/js/app.js'></script>
+    </body>
+</html>
