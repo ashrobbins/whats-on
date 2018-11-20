@@ -24,15 +24,17 @@
 
 // .c-heading--xx classes override the sizes given by default, and apply
 // style specific to a use case from the design.
+[class^='c-heading'] {
+    color: $white;
+}
 
-.c-heading--name {
-    font-size: rem-calc(22);
+.c-heading--page {
+    width: 40rem;
+    margin-bottom: 2rem;
+    font-size: rem-calc(30);
 }
 .c-heading--section {
     width: 40rem;
-    max-width: 94%;
-    font-size: rem-calc(16);
-}
-.c-heading--filter {
     margin-bottom: 2rem;
+    font-size: rem-calc(16);
 }

@@ -622,21 +622,24 @@ select {
   margin: 0 0 0.3rem;
   font-weight: 900; }
 
-.c-heading--name {
-  font-size: 2.2rem; }
+[class^='c-heading'] {
+  color: #fff; }
+
+.c-heading--page {
+  width: 40rem;
+  margin-bottom: 2rem;
+  font-size: 3rem; }
 
 .c-heading--section {
   width: 40rem;
-  max-width: 94%;
+  margin-bottom: 2rem;
   font-size: 1.6rem; }
-
-.c-heading--filter {
-  margin-bottom: 2rem; }
 
 .app-container {
   min-height: 100vh;
   overflow: hidden;
-  background-color: #f5f5f5; }
+  background-color: #f5f5f5;
+  background-image: linear-gradient(225deg, #ff7f33, #ff395c); }
 
 .active-list,
 .completed-list {
@@ -660,7 +663,7 @@ select {
 
 .clear-filter {
   margin-left: .5rem;
-  color: #6b6b6b;
+  color: #f5f5f5;
   font-size: 1.2rem;
   cursor: pointer; }
   .clear-filter:hover {
@@ -673,22 +676,29 @@ select {
       align-items: center;
   -ms-flex-pack: center;
       justify-content: center;
-  padding: 3rem 2rem;
-  background-color: #e90052; }
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  padding: 3rem 2rem; }
 
 .new-task {
   height: auto;
   width: 100%;
   max-width: 40rem;
-  margin-bottom: 2rem;
   padding: 1.4rem 2rem;
   font-size: 1.3rem;
   border: 0;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.5); }
+  color: #fff; }
+  .new-task::-webkit-input-placeholder {
+    color: #cccccc; }
+  .new-task:-ms-input-placeholder {
+    color: #cccccc; }
+  .new-task::placeholder {
+    color: #cccccc; }
   .new-task:focus {
-    background-color: #fff; }
+    outline: none;
+    border: 1px solid #ff395c; }
 
 .task-list {
   list-style: none;

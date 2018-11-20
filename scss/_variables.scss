@@ -8,6 +8,9 @@ $pixelBase : 10;
 // Colours
 $primary-color: #e90052;
 $secondary-color: #38003c;
+$orange: #ff7f33;
+$pink: #ff395c;
+$bg-gradient-orangey: linear-gradient(225deg, $orange, $pink);
 $white: #fff;
 $grey: #eaeaea;
 $dark-grey: darken($grey, 50%);

@@ -3,6 +3,7 @@
     min-height: 100vh;
     overflow: hidden;
     background-color: $light-grey;
+    background-image: $bg-gradient-orangey; 
 }
 
 .active-list,
@@ -27,7 +28,7 @@
 
 .clear-filter {
     margin-left: .5rem;
-    color: $dark-grey;
+    color: $light-grey;
     font-size: 1.2rem;
     cursor: pointer;
 

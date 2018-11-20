@@ -53,7 +53,7 @@ var app = new Vue({
 
             var _this = this;
 
-            var tag = _this.getHash(_this.newTaskLabel);
+            var tag = _this.getHash(_this.newTaskLabel) || '';
 
             _this.firebase.ref('/tasks').push({
                 label: _this.newTaskLabel,

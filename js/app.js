@@ -50,7 +50,7 @@ const app = new Vue({
 
             let _this = this;
 
-            let tag = _this.getHash( _this.newTaskLabel );
+            let tag = _this.getHash( _this.newTaskLabel ) || '';
 
             _this.firebase.ref('/tasks').push({
                 label: _this.newTaskLabel,
