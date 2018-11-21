@@ -3,7 +3,7 @@
     <head>
         <title>What's on?</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#e5127d">
+        <meta name="theme-color" content="#ff7f33">
     </head>
     <body>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js'></script>
@@ -15,12 +15,14 @@
 
         <div id='app' class='app-container'>
             <header class='app-header'>
-                <h1 class='c-heading--page'>What's on?</h1>
-                <input type='text' v-on:keyup.enter='addTask' v-model='newTaskLabel' class='input-text new-task' placeholder='Add a task...' />
+                <div class='wrapper'>
+                    <h1 class='c-heading--page'>What's on?</h1>
+                    <input type='text' v-on:keyup.enter='addTask' v-model='newTaskLabel' class='input-text new-task' placeholder='Add a task...' />
+                </div>
             </header>
             
             
-            <section class='active-list'>
+            <section class='active-list wrapper'>
                 <h2 class='c-heading--section c-heading--filter' v-if='activeFilter'>{{ activeFilter }} <i class='fas fa-times clear-filter' @click='clearFilter'></i></h2>
                 <ul class='task-list'>
                     <li v-for='( task, index ) in tasks' class='task-list__item' v-if='!task.complete && !task.trash'>
@@ -31,7 +33,7 @@
                 </ul>
             </section>
 
-            <section class='completed-list'>
+            <section class='completed-list wrapper'>
                 <h2 class='c-heading--section'>Completed tasks</h2>
                 <ul class='task-list task-list--completed'>
                     <li v-for='( task, index ) in tasks' class='task-list__item' v-if='task.complete && !task.trash'>

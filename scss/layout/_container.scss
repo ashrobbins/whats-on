@@ -6,14 +6,17 @@
     background-image: $bg-gradient-orangey; 
 }
 
+.wrapper {
+    width: 40rem;
+    max-width: 94%;
+}
+
 .active-list,
 .completed-list {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-flow: row wrap;
-    width: 40rem;
-    max-width: 94%;
     margin: auto;
     padding: 2rem 0;
 }
